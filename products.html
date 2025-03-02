@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoVision Solutions | Catalogue Produits</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>TechnoVision Solutions</h1>
+                </div>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="products.html">Produits</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+       
+    </header>
+
+    <main>
+        <section class="products-hero">
+            <div class="container">
+                <h1 class="animate-fade-in">Catalogue de Produits</h1>
+                <p class="animate-slide-up">Découvrez notre sélection de solutions professionnelles</p>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="container">
+                <div class="filters-section">
+                    <h2>Filtres</h2>
+                    <div class="filter-group">
+                        <h3>Catégories</h3>
+                        <label><input type="checkbox" value="hardware"> Matériel</label>
+                        <label><input type="checkbox" value="software"> Logiciel</label>
+                        <label><input type="checkbox" value="network"> Réseau</label>
+                        <label><input type="checkbox" value="security"> Sécurité</label>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Prix</h3>
+                        <input type="range" min="0" max="10000" step="500" id="priceRange">
+                        <span id="priceValue"> €</span>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Disponibilité</h3>
+                        <label><input type="radio" name="availability" value="all" checked> Tous</label>
+                        <label><input type="radio" name="availability" value="instock"> En stock</label>
+                        <label><input type="radio" name="availability" value="preorder"> Précommande</label>
+                    </div>
+
+                    <button id="resetFilters" class="btn">Réinitialiser les filtres</button>
+                </div>
+
+                <div class="products-grid" id="productsContainer">
+                    <!-- Les produits seront injectés ici par JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechnoVision Solutions</h3>
+                    <p>Votre succès, notre expertise</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: contact@technovision.fr</p>
+                    <p>Tél: 01 23 45 67 89</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+</body>
+</html>
