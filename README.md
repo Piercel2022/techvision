@@ -57,7 +57,7 @@ REQUIRED SECTIONS:
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="[https://html.spec.whatwg.org](https://html.spec.whatwg.org/)">Html</a></li>
+    <li><a href="https://html.spec.whatwg.org/">Html</a></li>
   </ul>
 </details>
 
