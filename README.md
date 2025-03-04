@@ -45,7 +45,7 @@ REQUIRED SECTIONS:
 
 
 
-**[your_project__name]** is a...
+**[Technovision]**  appears to be a technology-focused website, likely covering topics such as tech news, product reviews, digital innovations, and industry trends. It might showcase emerging technologies, offer analysis of tech developments, or provide insights into the future of technology.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -55,16 +55,23 @@ REQUIRED SECTIONS:
 
 
 <details>
-  <summary>Server</summary>
+  <summary>Client</summary>
   <ul>
-    <li><a href="[https://guides.rubyonrails.org/](https://guides.rubyonrails.org/)">Rails</a></li>
+    <li><a href="[https://html.spec.whatwg.org](https://html.spec.whatwg.org/)">Html</a></li>
   </ul>
 </details>
 
 <details>
-<summary>Database</summary>
+<summary>Client</summary>
   <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://www.w3.org/Style/CSS/">Css</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Javascript</summary>
+  <ul>
+    <li><a href="https://tc39.es/">Javascript</a></li>
   </ul>
 </details>
 
