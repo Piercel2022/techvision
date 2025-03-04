@@ -41,11 +41,11 @@ REQUIRED SECTIONS:
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Technovision] <a name="about-project"></a>
+# 📖 Technovision <a name="about-project"></a>
 
 
 
-**[Technovision]**  appears to be a technology-focused website, likely covering topics such as tech news, product reviews, digital innovations, and industry trends. It might showcase emerging technologies, offer analysis of tech developments, or provide insights into the future of technology.
+**Technovision**  appears to be a technology-focused website, likely covering topics such as tech news, product reviews, digital innovations, and industry trends. It might showcase emerging technologies, offer analysis of tech developments, or provide insights into the future of technology.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -69,7 +69,7 @@ REQUIRED SECTIONS:
 </details>
 
 <details>
-<summary>Javascript</summary>
+<summary>Client</summary>
   <ul>
     <li><a href="https://tc39.es/">Javascript</a></li>
   </ul>
