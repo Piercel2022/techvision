@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentSlide: 0,
         slides: [
             {
-                image: 'images',
+                image: 'images/abc.png',
                 title: 'Transformation digitale - Société ABC',
                 description: 'Modernisation complète de l\'infrastructure IT'
             },
