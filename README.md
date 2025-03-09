@@ -83,7 +83,7 @@ REQUIRED SECTIONS:
 
 - **Showcase Products**
 - **Showcase Services**
-- **[Company Journey]**
+- **Company Journey**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
