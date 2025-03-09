@@ -81,7 +81,7 @@ REQUIRED SECTIONS:
 
 
 
-- **[Showcase Products]**
+- **Showcase Products**
 - **[Showcase Services]**
 - **[Company Journey]**
 
