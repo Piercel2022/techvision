@@ -4,9 +4,297 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechnoVision Solutions | Catalogue Produits</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/products.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        /* style.css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #3498db;
+        }
+        
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* products.css */
+        .products-hero {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+        
+        .products-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .products-section {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .products-section .container {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .filters-section {
+            flex: 0 0 250px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .filter-group {
+            margin-bottom: 25px;
+        }
+        
+        .filter-group h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .filter-group label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        
+        .filter-group input[type="range"] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        #priceValue {
+            font-weight: bold;
+        }
+        
+        .products-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .product-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .product-availability {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .product-availability.in-stock {
+            color: #27ae60;
+        }
+        
+        .product-availability.pre-order {
+            color: #e67e22;
+        }
+        
+        /* animations.css */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #2c3e50;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transform: translateY(-100%);
+                transition: transform 0.3s;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .products-section .container {
+                flex-direction: column;
+            }
+            
+            .filters-section {
+                flex: none;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -25,9 +313,8 @@
                 </ul>
             </nav>
         </div>
-       
     </header>
-
+    
     <main>
         <section class="products-hero">
             <div class="container">
@@ -35,42 +322,42 @@
                 <p class="animate-slide-up">Découvrez notre sélection de solutions professionnelles</p>
             </div>
         </section>
-
+        
         <section class="products-section">
             <div class="container">
                 <div class="filters-section">
                     <h2>Filtres</h2>
                     <div class="filter-group">
                         <h3>Catégories</h3>
-                        <label><input type="checkbox" value="hardware"> Matériel</label>
-                        <label><input type="checkbox" value="software"> Logiciel</label>
-                        <label><input type="checkbox" value="network"> Réseau</label>
-                        <label><input type="checkbox" value="security"> Sécurité</label>
+                        <label><input type="checkbox" value="portfolio" class="category-filter"> Portfolio</label>
+                        <label><input type="checkbox" value="ecommerce" class="category-filter"> Ecommerce</label>
+                        <label><input type="checkbox" value="personal" class="category-filter"> Sites Personnel</label>
+                        <label><input type="checkbox" value="enterprise" class="category-filter"> Sites d'entreprise</label>
                     </div>
                     
                     <div class="filter-group">
                         <h3>Prix</h3>
-                        <input type="range" min="0" max="10000" step="500" id="priceRange">
-                        <span id="priceValue"> €</span>
+                        <input type="range" min="0" max="10000" step="500" value="10000" id="priceRange">
+                        <span id="priceValue">10000 €</span>
                     </div>
-
+                    
                     <div class="filter-group">
                         <h3>Disponibilité</h3>
-                        <label><input type="radio" name="availability" value="all" checked> Tous</label>
-                        <label><input type="radio" name="availability" value="instock"> En stock</label>
-                        <label><input type="radio" name="availability" value="preorder"> Précommande</label>
+                        <label><input type="radio" name="availability" value="all" checked class="availability-filter"> Tous</label>
+                        <label><input type="radio" name="availability" value="instock" class="availability-filter"> En stock</label>
+                        <label><input type="radio" name="availability" value="preorder" class="availability-filter"> Précommande</label>
                     </div>
-
+                    
                     <button id="resetFilters" class="btn">Réinitialiser les filtres</button>
                 </div>
-
+                
                 <div class="products-grid" id="productsContainer">
                     <!-- Les produits seront injectés ici par JavaScript -->
                 </div>
             </div>
         </section>
     </main>
-
+    
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -86,8 +373,202 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Données des produits (normalement ces données viendraient d'une API ou d'une base de données)
+        const products = [
+            {
+                id: 1,
+                title: "Template Portfolio Premium",
+                price: 1500,
+                category: "portfolio",
+                availability: "instock",
+                image: "/api/placeholder/400/320"
+            },
+            {
+                id: 2,
+                title: "Boutique E-commerce Avancée",
+                price: 5000,
+                category: "ecommerce",
+                availability: "instock",
+                image: "/api/placeholder/400/320"
+            },
+            {
+                id: 3,
+                title: "Site Personnel Standard",
+                price: 800,
+                category: "personal",
+                availability: "instock",
+                image: "/api/placeholder/400/320"
+            },
+            {
+                id: 4,
+                title: "Site Entreprise Premium",
+                price: 7500,
+                category: "enterprise",
+                availability: "preorder",
+                image: "/api/placeholder/400/320"
+            },
+            {
+                id: 5,
+                title: "Portfolio Photographe",
+                price: 2000,
+                category: "portfolio",
+                availability: "instock",
+                image: "/api/placeholder/400/320"
+            },
+            {
+                id: 6,
+                title: "E-commerce Dropshipping",
+                price: 3500,
+                category: "ecommerce",
+                availability: "preorder",
+                image: "/api/placeholder/400/320"
+            },
+            {
+                id: 7,
+                title: "Blog Personnel Pro",
+                price: 1200,
+                category: "personal",
+                availability: "instock",
+                image: "/api/placeholder/400/320"
+            },
+            {
+                id: 8,
+                title: "Site Vitrine Entreprise",
+                price: 4000,
+                category: "enterprise",
+                availability: "instock",
+                image: "/api/placeholder/400/320"
+            },
+            {
+                id: 9,
+                title: "Portfolio Artistique",
+                price: 1800,
+                category: "portfolio",
+                availability: "preorder",
+                image: "/api/placeholder/400/320"
+            },
+            {
+                id: 10,
+                title: "Marketplace Multi-vendeurs",
+                price: 9500,
+                category: "ecommerce",
+                availability: "preorder",
+                image: "/api/placeholder/400/320"
+            }
+        ];
 
-    <script src="js/products.js"></script>
-    <script src="js/menu.js"></script>
+        // Fonction pour afficher les produits
+        function displayProducts(productsToDisplay) {
+            const productsContainer = document.getElementById('productsContainer');
+            productsContainer.innerHTML = '';
+            
+            if (productsToDisplay.length === 0) {
+                productsContainer.innerHTML = '<p>Aucun produit ne correspond à vos critères.</p>';
+                return;
+            }
+            
+            productsToDisplay.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                const availabilityClass = product.availability === 'instock' ? 'in-stock' : 'pre-order';
+                const availabilityText = product.availability === 'instock' ? 'En stock' : 'Précommande';
+                
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-price">${product.price} €</p>
+                        <p class="product-availability ${availabilityClass}">${availabilityText}</p>
+                        <button class="btn">Voir détails</button>
+                    </div>
+                `;
+                
+                productsContainer.appendChild(productCard);
+            });
+        }
+        
+        // Fonction pour filtrer les produits
+        function filterProducts() {
+            const priceRange = document.getElementById('priceRange').value;
+            const checkedCategories = Array.from(document.querySelectorAll('.category-filter:checked')).map(input => input.value);
+            const selectedAvailability = document.querySelector('.availability-filter:checked').value;
+            
+            let filteredProducts = products.filter(product => {
+                // Filtre par prix
+                if (product.price > priceRange) {
+                    return false;
+                }
+                
+                // Filtre par catégorie
+                if (checkedCategories.length > 0 && !checkedCategories.includes(product.category)) {
+                    return false;
+                }
+                
+                // Filtre par disponibilité
+                if (selectedAvailability !== 'all' && product.availability !== selectedAvailability) {
+                    return false;
+                }
+                
+                return true;
+            });
+            
+            displayProducts(filteredProducts);
+        }
+        
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Afficher tous les produits au chargement
+            displayProducts(products);
+            
+            // Mise à jour du prix affiché
+            const priceRange = document.getElementById('priceRange');
+            const priceValue = document.getElementById('priceValue');
+            
+            priceRange.addEventListener('input', function() {
+                priceValue.textContent = this.value + ' €';
+                filterProducts();
+            });
+            
+            // Écouteurs d'événements pour les filtres
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('change', filterProducts);
+            });
+            
+            const availabilityFilters = document.querySelectorAll('.availability-filter');
+            availabilityFilters.forEach(filter => {
+                filter.addEventListener('change', filterProducts);
+            });
+            
+            // Réinitialiser les filtres
+            document.getElementById('resetFilters').addEventListener('click', function() {
+                priceRange.value = 10000;
+                priceValue.textContent = '10000 €';
+                
+                categoryFilters.forEach(filter => {
+                    filter.checked = false;
+                });
+                
+                document.querySelector('.availability-filter[value="all"]').checked = true;
+                
+                filterProducts();
+            });
+            
+            // Gestion du menu hamburger
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
