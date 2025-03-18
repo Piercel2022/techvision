@@ -249,7 +249,8 @@ nav {
 }
 
 .testimonial-author img {
-    border-radius: 50%;
+    /*border-radius: 50%; */
+    transition: transform 0.3s ease-in-out;
 }
 
 /* CTA Section */
