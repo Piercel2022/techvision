@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoVision Solutions | Template Portfolio Premium</title>
+    <style>
+        /* Base styles (repris du fichier principal) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #3498db;
+        }
+        
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Animations */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Product Detail Specific Styles */
+        .product-detail {
+            padding: 40px 0;
+        }
+        
+        .product-detail-container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .product-gallery {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .thumbnail-gallery {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 60px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        .thumbnail:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        
+        .thumbnail.active {
+            opacity: 1;
+            border: 2px solid #3498db;
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            flex: 1;
+        }
+        
+        .product-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .product-price {
+            font-size: 1.8rem;
+            color: #3498db;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .product-availability {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .product-availability.in-stock {
+            background-color: #e3f8e9;
+            color: #27ae60;
+        }
+        
+        .product-availability.pre-order {
+            background-color: #fdf2e3;
+            color: #e67e22;
+        }
+        
+        .product-description {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .product-features {
+            margin-bottom: 30px;
+        }
+        
+        .product-features h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .features-list {
+            list-style-type: none;
+        }
+        
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn-primary {
+            background-color: #3498db;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid #3498db;
+            color: #3498db;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #eef7fd;
+        }
+        
+        .related-products {
+            margin-top: 60px;
+        }
+        
+        .related-products h2 {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .related-image {
+            height: 160px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .related-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        
+        .related-info {
+            padding: 15px;
+        }
+        
+        .related-title {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        
+        .related-price {
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .tabs {
+            margin-top: 40px;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tab-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: bold;
+            color: #777;
+            transition: all 0.3s;
+        }
+        
+        .tab-button.active {
+            border-bottom-color: #3498db;
+            color: #3498db;
+        }
+        
+        .tab-content {
+            padding: 20px 0;
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #2c3e50;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transform: translateY(-100%);
+                transition: transform 0.3s;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .product-detail-container {
+                flex-direction: column;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .related-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>TechnoVision Solutions</h1>
+                </div>
+                <button class="hamburger">&#9776;</button> <!-- Hamburger Icon -->
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="products.html" class="active">Produits</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="product-detail">
+            <div class="container">
+                <div class="product-detail-container">
+                    <div class="product-gallery animate-fade-in">
+                        <img id="mainImage" src="/images/principale.png" alt="Template Portfolio Premium">
+                        <div class="thumbnail-gallery">
+                            <div class="thumbnail active">
+                                <img src="/images/principale.png" alt="Vue principale" onclick="changeImage(this)">
+                            </div>
+                            <div class="thumbnail">
+                                <img src="/images/alternative1.png" alt="Vue alternative" onclick="changeImage(this)">
+                            </div>
+                            <div class="thumbnail">
+                                <img src="/images/alternative2.png" alt="Vue alternative" onclick="changeImage(this)">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-info animate-slide-in-right">
+                        <h1 class="product-title">Template Portfolio Premium</h1>
+                        <p class="product-price">1500 €</p>
+                        <p class="product-availability in-stock">En stock</p>
+                        
+                        <div class="product-description">
+                            <p>Notre Template Portfolio Premium est la solution idéale pour les créatifs et les professionnels qui souhaitent mettre en valeur leur travail avec élégance et professionnalisme. Ce template est conçu pour impressionner vos visiteurs et convertir les prospects en clients.</p>
+                            <p>Entièrement personnalisable et optimisé pour tous les appareils, ce template offre une expérience utilisateur exceptionnelle tout en conservant des temps de chargement rapides.</p>
+                        </div>
+                        
+                        <div class="product-features">
+                            <h3>Caractéristiques</h3>
+                            <ul class="features-list">
+                                <li>Design responsive adaptable à tous les écrans</li>
+                                <li>Animations et transitions fluides</li>
+                                <li>Galerie de projets avec filtres dynamiques</li>
+                                <li>Formulaire de contact et intégration des réseaux sociaux</li>
+                                <li>Optimisé pour le référencement (SEO)</li>
+                                <li>Compatible avec tous les navigateurs modernes</li>
+                                <li>Support technique inclus pendant 6 mois</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cta-buttons">
+                            <a href="#" class="btn btn-primary animate-pulse">Acheter maintenant</a>
+                            <a href="#" class="btn btn-secondary">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" onclick="openTab(event, 'description')">Description détaillée</button>
+                        <button class="tab-button" onclick="openTab(event, 'specifications')">Spécifications techniques</button>
+                        <button class="tab-button" onclick="openTab(event, 'reviews')">Avis clients</button>
+                    </div>
+                    
+                    <div id="description" class="tab-content active">
+                        <h3>Description complète</h3>
+                        <p>Le Template Portfolio Premium est une solution clé en main pour les professionnels créatifs cherchant à établir une présence en ligne de qualité. Qu'il s'agisse de photographes, designers, architectes, ou autres artistes, ce template est conçu pour mettre en valeur vos créations et compétences.</p>
+                        <p>L'interface intuitive permet une navigation fluide entre les différentes sections, offrant une expérience utilisateur agréable et engageante. La mise en page soignée et les animations subtiles guident naturellement les visiteurs vers vos travaux les plus importants et vers votre appel à l'action.</p>
+                        <p>Notre Template Portfolio Premium inclut également une section blog pour partager votre expertise et améliorer votre référencement, ainsi qu'une page à propos personnalisable pour raconter votre histoire et renforcer la connexion avec vos visiteurs.</p>
+                    </div>
+                    
+                    <div id="specifications" class="tab-content">
+                        <h3>Spécifications techniques</h3>
+                        <ul>
+                            <li><strong>Technologies utilisées:</strong> HTML5, CSS3, JavaScript</li>
+                            <li><strong>Framework:</strong> Bootstrap 5</li>
+                            <li><strong>Plugins inclus:</strong> Isotope, AOS, Slick Slider, LightGallery</li>
+                            <li><strong>Compatible avec:</strong> WordPress, Joomla, Drupal (modules d'intégration fournis)</li>
+                            <li><strong>Temps de chargement moyen:</strong> 1.8 seconde</li>
+                            <li><strong>Score PageSpeed:</strong> 90+</li>
+                            <li><strong>Taille du package:</strong> 15MB</li>
+                            <li><strong>Structure des fichiers:</strong> Organisation modulaire pour faciliter la personnalisation</li>
+                            <li><strong>Documentation:</strong> Complète avec exemples et vidéos tutoriels</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="reviews" class="tab-content">
+                        <h3>Avis clients</h3>
+                        <div class="review">
+                            <h4>Thomas D.</h4>
+                            <p>★★★★★</p>
+                            <p>"J'ai utilisé ce template pour mon portfolio de photographe et j'ai reçu énormément de compliments. L'installation a été très simple et le support technique a répondu rapidement à mes questions. Je recommande vivement!"</p>
+                        </div>
+                        <div class="review">
+                            <h4>Sophie M.</h4>
+                            <p>★★★★☆</p>
+                            <p>"Design élégant et moderne, parfait pour mon travail d'architecte. La seule petite critique serait sur la personnalisation des couleurs qui pourrait être plus intuitive, mais rien qu'une petite modification de code ne puisse régler."</p>
+                        </div>
+                        <div class="review">
+                            <h4>Marc L.</h4>
+                            <p>★★★★★</p>
+                            <p>"Ce template m'a fait gagner un temps précieux dans la création de mon site portfolio. Les animations sont fluides et l'ensemble est très professionnel. Un investissement rentabilisé dès les premiers mois!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <section class="related-products">
+                    <h2>Produits similaires</h2>
+                    <div class="related-grid">
+                        <div class="related-card animate-fade-in">
+                            <div class="related-image">
+                                <img src="/api/placeholder/400/320" alt="Portfolio Photographe">
+                            </div>
+                            <div class="related-info">
+                                <h3 class="related-title">Portfolio Photographe</h3>
+                                <p class="related-price">2000 €</p>
+                                <a href="product-5.html" class="btn">Voir détails</a>
+                            </div>
+                        </div>
+                        
+                        <div class="related-card animate-fade-in" style="animation-delay: 0.2s;">
+                            <div class="related-image">
+                                <img src="/api/placeholder/400/320" alt="Portfolio Artistique">
+                            </div>
+                            <div class="related-info">
+                                <h3 class="related-title">Portfolio Artistique</h3>
+                                <p class="related-price">1800 €</p>
+                                <a href="product-9.html" class="btn">Voir détails</a>
+                            </div>
+                        </div>
+                        
+                        <div class="related-card animate-fade-in" style="animation-delay: 0.4s;">
+                            <div class="related-image">
+                                <img src="/api/placeholder/400/320" alt="Site Personnel Standard">
+                            </div>
+                            <div class="related-info">
+                                <h3 class="related-title">Site Personnel Standard</h3>
+                                <p class="related-price">800 €</p>
+                                <a href="product-3.html" class="btn">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechnoVision Solutions</h3>
+                    <p>Votre succès, notre expertise</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: piercel.coder2022@gmail.com</p>
+                    <p>Tél: 01 23 45 67 89</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Fonction pour changer l'image principale
+        function changeImage(element) {
+            // Changer l'image principale
+            document.getElementById('mainImage').src = element.src;
+            
+            // Mettre à jour la classe active
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            element.parentElement.classList.add('active');
+        }
+        
+        // Fonction pour gérer les onglets
+        function openTab(evt, tabName) {
+            // Masquer tous les contenus d'onglets
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // Supprimer la classe active de tous les boutons d'onglets
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Afficher le contenu de l'onglet actuel et ajouter la classe active au bouton
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+        
+        // Gestion du menu hamburger
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
