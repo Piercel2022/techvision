@@ -198,6 +198,41 @@
 .carousel-prev { left: 10px; }
 .carousel-next { right: 10px; }
 
+/* Ajouter ce code à votre fichier services.css existant */
+
+.carousel-item.featured {
+    position: relative;
+    border: 2px solid #3498db;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* S'assurer que le bouton en savoir plus n'est visible que sur l'élément spécial */
+.carousel-item .btn {
+    display: inline-block;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.carousel-item .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .services-hero {
