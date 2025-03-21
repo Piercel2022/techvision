@@ -408,3 +408,59 @@ footer {
         margin: 0 20px;
     }
 }
+
+/* Ajouter ce code à votre fichier style.css principal */
+
+/* Styles pour le sous-menu */
+.nav-links li {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    padding: 0;
+}
+
+.nav-links li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu li {
+    display: block;
+    width: 100%;
+}
+
+.submenu li a {
+    display: block;
+    padding: 12px 15px;
+    color: #333;
+    border-bottom: 1px solid #f1f1f1;
+    transition: all 0.2s ease;
+}
+
+.submenu li a:hover {
+    background-color: #f8f8f8;
+    padding-left: 20px;
+}
+
+.submenu li a.highlight {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.submenu li a.highlight:hover {
+    background-color: #fff9f9;
+}
