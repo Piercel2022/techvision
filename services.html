@@ -86,6 +86,183 @@
         .carousel-dot.active {
             background: #555;
         }
+
+        /* Nouveaux styles pour les services améliorés */
+        .service-card {
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            margin-bottom: 1.5rem;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .service-title {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .service-subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #e74c3c;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-description {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            margin-bottom: 1.5rem;
+            text-align: left;
+            padding-left: 1rem;
+        }
+
+        .service-features li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .testimonial {
+            background: rgba(236, 240, 241, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            font-style: italic;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .testimonial:before {
+           
+            font-size: 3rem;
+            position: absolute;
+            top: -15px;
+            left: 10px;
+            color: rgba(52, 152, 219, 0.2);
+        }
+
+        .testimonial-author {
+            text-align: right;
+            font-weight: bold;
+            color: #34495e;
+            font-style: normal;
+        }
+
+        .guarantee {
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .btn-service {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .btn-service:hover {
+            background: linear-gradient(to right, #2980b9, #3498db);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .services-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/services-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .services-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 3rem auto 2rem;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #3498db;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body>
@@ -97,8 +274,8 @@
                 </div>
                 <button class="hamburger">&#9776;</button> <!-- Hamburger Icon -->
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Accueil</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
                     <li><a href="products.html">Produits</a></li>
                     <li><a href="about.html">À propos</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -110,78 +287,120 @@
     <main>
         <section class="services-hero">
             <div class="container">
-                <h1 class="animate-fade-in">Nos Services Professionnels</h1>
-                <p class="animate-slide-up">Des solutions adaptées à vos besoins informatiques</p>
+                <h1 class="animate-fade-in">Solutions Technologiques Transformatrices</h1>
+                <p class="animate-slide-up">Des services personnalisés qui propulsent votre entreprise vers l'excellence numérique</p>
             </div>
+        </section>
+
+        <section class="services-intro">
+            <h2>Accélérez votre croissance grâce à notre expertise</h2>
+            <p>Dans un monde où la technologie évolue constamment, votre entreprise a besoin d'un partenaire capable d'anticiper les changements et de vous guider vers l'excellence numérique. Chez TechnoVision Solutions, nous combinons expertise technique et vision stratégique pour créer des solutions sur mesure qui répondent parfaitement à vos défis spécifiques.</p>
         </section>
 
         <section class="services-grid">
             <div class="container">
                 <div class="service-card animate-slide-in">
+                    <div class="service-tag">Le plus demandé</div>
                     <div class="service-icon">
                         <img src="images/transformation_numerique.png" alt="Transformation numérique">
                     </div>
-                    <h3>Conseil en transformation numérique</h3>
-                    <p>Accompagnement personnalisé pour moderniser votre infrastructure IT et optimiser vos processus digitaux.</p>
+                    <h3 class="service-title">Conseil en transformation numérique</h3>
+                    <p class="service-subtitle">Propulsez votre entreprise vers l'ère digitale</p>
+                    <p class="service-description">Notre expertise vous guide à travers chaque étape de votre transformation digitale, en convertissant les défis technologiques en avantages concurrentiels décisifs pour votre croissance.</p>
                     <ul class="service-features">
-                        <li>Audit de l'existant</li>
-                        <li>Stratégie digitale</li>
-                        <li>Planning de transformation</li>
-                        <li>Accompagnement au changement</li>
+                        <li>Audit complet de votre infrastructure actuelle</li>
+                        <li>Élaboration d'une stratégie digitale sur mesure</li>
+                        <li>Planification détaillée de la transformation</li>
+                        <li>Formation et accompagnement des équipes</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-service">Demander un conseil</a>
+                    <div class="testimonial">
+                        "Après notre collaboration avec TechnoVision, notre productivité a augmenté de 37% dès les trois premiers mois. Leur approche méthodique nous a permis d'éviter les erreurs coûteuses et d'adopter rapidement les bonnes pratiques digitales."
+                        <div class="testimonial-author">— Sophie M., Directrice Opérationnelle</div>
+                    </div>
+                    <p class="price-tag">À partir de 2 800€</p>
+                    <div class="guarantee">
+                        <strong>Notre promesse :</strong> Si vous n'observez pas d'améliorations mesurables après 3 mois, nous prolongeons notre accompagnement gratuitement.
+                    </div>
+                    <a href="contact.html" class="btn btn-service">Planifier un audit gratuit</a>
                 </div>
 
                 <div class="service-card animate-slide-in">
                     <div class="service-icon">
                         <img src="images/development_sur-mesure.png" alt="Développement">
                     </div>
-                    <h3>Développement sur mesure</h3>
-                    <p>Création d'applications et logiciels personnalisés répondant précisément à vos besoins spécifiques.</p>
+                    <h3 class="service-title">Développement sur mesure</h3>
+                    <p class="service-subtitle">Des solutions uniques pour des besoins uniques</p>
+                    <p class="service-description">Nous créons des applications personnalisées qui s'alignent parfaitement avec vos processus métier, éliminant les frustrations des solutions génériques et maximisant votre efficacité opérationnelle.</p>
                     <ul class="service-features">
-                        <li>Applications web & mobile</li>
-                        <li>Logiciels métier</li>
-                        <li>Intégration API</li>
-                        <li>Maintenance évolutive</li>
+                        <li>Applications web performantes et évolutives</li>
+                        <li>Solutions mobiles cross-platform</li>
+                        <li>Logiciels métier parfaitement adaptés à vos besoins</li>
+                        <li>Intégration transparente avec vos systèmes existants</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-service">Démarrer un projet</a>
+                    <div class="testimonial">
+                        "L'application sur mesure développée par TechnoVision nous a permis d'automatiser des processus qui prenaient auparavant 12 heures par semaine. Le ROI a dépassé nos attentes dès le deuxième mois d'utilisation."
+                        <div class="testimonial-author">— Thomas L., CEO de LogiTrans</div>
+                    </div>
+                    <p class="price-tag">À partir de 3 500€</p>
+                    <div class="guarantee">
+                        <strong>Notre promesse :</strong> Nous continuerons à affiner votre solution jusqu'à ce qu'elle réponde parfaitement à vos attentes, sans frais supplémentaires.
+                    </div>
+                    <a href="contact.html" class="btn btn-service">Discuter de votre projet</a>
                 </div>
 
                 <div class="service-card animate-slide-in">
                     <div class="service-icon">
                         <img src="images/support.png" alt="Support">
                     </div>
-                    <h3>Support technique 24/7</h3>
-                    <p>Une équipe d'experts disponible en permanence pour résoudre vos problèmes techniques.</p>
+                    <h3 class="service-title">Support technique 24/7</h3>
+                    <p class="service-subtitle">Une tranquillité d'esprit absolue</p>
+                    <p class="service-description">Notre équipe d'experts veille sur votre infrastructure jour et nuit, anticipant les problèmes et intervenant rapidement pour garantir une continuité opérationnelle optimale pour votre entreprise.</p>
                     <ul class="service-features">
-                        <li>Assistance téléphonique</li>
-                        <li>Intervention sur site</li>
-                        <li>Maintenance préventive</li>
-                        <li>Monitoring continu</li>
+                        <li>Temps de réponse garanti en moins de 15 minutes</li>
+                        <li>Équipe dédiée connaissant parfaitement votre environnement</li>
+                        <li>Maintenance proactive prévenant 93% des incidents</li>
+                        <li>Tableau de bord personnalisé pour suivre vos performances</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-service">Souscrire au support</a>
+                    <div class="testimonial">
+                        "Depuis que nous avons souscrit au support 24/7, nos temps d'arrêt ont diminué de 97%. Leur intervention proactive a même identifié et résolu des problèmes dont nous n'étions pas conscients."
+                        <div class="testimonial-author">— Claire D., Directrice IT</div>
+                    </div>
+                    <p class="price-tag">À partir de 990€/mois</p>
+                    <div class="guarantee">
+                        <strong>Notre promesse :</strong> Si nous ne respectons pas notre SLA, le mois suivant vous est offert.
+                    </div>
+                    <a href="contact.html" class="btn btn-service">Sécuriser mon infrastructure</a>
                 </div>
 
                 <div class="service-card animate-slide-in">
                     <div class="service-icon">
                         <img src="images/cloud.png" alt="Cloud">
                     </div>
-                    <h3>Solutions cloud & hébergement</h3>
-                    <p>Infrastructure cloud sécurisée et évolutive pour vos données et applications.</p>
+                    <h3 class="service-title">Solutions cloud & hébergement</h3>
+                    <p class="service-subtitle">L'agilité et la sécurité réunies</p>
+                    <p class="service-description">Notre infrastructure cloud hybride offre le parfait équilibre entre performance, sécurité et évolutivité, vous permettant de vous concentrer sur votre cœur de métier pendant que nous gérons votre écosystème digital.</p>
                     <ul class="service-features">
-                        <li>Cloud privé & public</li>
-                        <li>Sauvegarde automatisée</li>
-                        <li>Haute disponibilité</li>
-                        <li>Sécurité renforcée</li>
+                        <li>Architecture cloud optimisée pour votre charge de travail</li>
+                        <li>Sauvegardes automatiques avec restauration en 1 clic</li>
+                        <li>Protection avancée contre les cybermenaces</li>
+                        <li>Évolutivité instantanée selon vos besoins</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-service">Explorer le cloud</a>
+                    <div class="testimonial">
+                        "La migration vers les solutions cloud de TechnoVision a réduit nos coûts d'infrastructure de 42% tout en améliorant les performances de nos applications. Leur expertise en matière de sécurité nous a également libérés de nombreuses inquiétudes."
+                        <div class="testimonial-author">— Marc B., Directeur Financier</div>
+                    </div>
+                    <p class="price-tag">À partir de 450€/mois</p>
+                    <div class="guarantee">
+                        <strong>Notre promesse :</strong> Garantie de disponibilité de 99,9% avec compensation financière en cas de non-respect.
+                    </div>
+                    <a href="contact.html" class="btn btn-service">Libérer mon potentiel cloud</a>
                 </div>
             </div>
         </section>
 
         <section class="service-carousel">
             <div class="container">
-                <h2>Nos Réalisations</h2>
+                <h2 class="section-title">Nos Réalisations Qui Transforment des Entreprises</h2>
                 <div class="carousel-container">
                     <!-- Carousel directly in HTML instead of being loaded by JavaScript -->
                     <div class="carousel-wrapper">
@@ -190,7 +409,7 @@
                                 <img src="images/realisation1.png" alt="Projet e-commerce">
                                 <div class="realisation-content">
                                     <h3>Plateforme E-commerce</h3>
-                                    <p>Création d'une boutique en ligne complète avec système de paiement sécurisé pour une marque de vêtements.</p>
+                                    <p>Une boutique en ligne qui a augmenté les ventes de 78% en 6 mois pour une marque de vêtements éthiques, avec un système de paiement multi-devises et une expérience utilisateur primée.</p>
                                 </div>
                             </div>
                         </div>
@@ -198,8 +417,8 @@
                             <div class="realisation-card">
                                 <img src="images/realisation2.png" alt="Application mobile">
                                 <div class="realisation-content">
-                                    <h3>Application Mobile</h3>
-                                    <p>Développement d'une application de gestion des stocks en temps réel avec synchronisation cloud.</p>
+                                    <h3>Application Mobile de Gestion</h3>
+                                    <p>Solution mobile qui a réduit les erreurs d'inventaire de 94% pour un distributeur national, avec synchronisation en temps réel et fonctionnement hors-ligne pour les zones à faible connectivité.</p>
                                 </div>
                             </div>
                         </div>
@@ -207,8 +426,8 @@
                             <div class="realisation-card">
                                 <img src="images/realisation3.png" alt="Infrastructure cloud">
                                 <div class="realisation-content">
-                                    <h3>Migration Cloud</h3>
-                                    <p>Migration complète de l'infrastructure informatique d'une entreprise vers une solution cloud sécurisée.</p>
+                                    <h3>Migration Cloud Sécurisée</h3>
+                                    <p>Transition fluide vers le cloud pour une entreprise de 200 employés, réalisée sans interruption de service et ayant généré 38% d'économies sur les coûts d'infrastructure la première année.</p>
                                 </div>
                             </div>
                         </div>
@@ -216,8 +435,8 @@
                             <div class="realisation-card">
                                 <img src="images/realisation4.jpg" alt="Système CRM">
                                 <div class="realisation-content">
-                                    <h3>Système CRM sur mesure</h3>
-                                    <p>Conception d'un outil de gestion de la relation client adapté aux besoins spécifiques d'une société de conseil.</p>
+                                    <h3>CRM Sur Mesure</h3>
+                                    <p>Système de gestion client qui a augmenté le taux de conversion de 41% pour un cabinet de conseil, avec automatisation des suivis et intégration complète avec les outils marketing existants.</p>
                                 </div>
                             </div>
                         </div>
@@ -235,6 +454,14 @@
                 </div>
             </div>
         </section>
+
+        <section class="cta-section" style="background: #f8f9fa; padding: 4rem 0; text-align: center; margin-top: 3rem;">
+            <div class="container">
+                <h2>Prêt à transformer votre entreprise?</h2>
+                <p style="max-width: 700px; margin: 1rem auto 2rem;">Nos experts sont disponibles pour une consultation gratuite de 30 minutes où nous analyserons vos besoins et vous proposerons des solutions concrètes.</p>
+                <a href="contact.html" class="btn btn-service" style="font-size: 1.1rem; padding: 15px 30px;">Réserver ma consultation gratuite</a>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -246,7 +473,7 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <p>Email: contact@netvision.netlify.app</p>
+                    <p>Email: piercel.coder2022@gmail.com</p>
                     <p>Tél: 01 23 45 67 89</p>
                 </div>
             </div>
