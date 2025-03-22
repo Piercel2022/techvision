@@ -1,0 +1,344 @@
+ /* Styles spécifiques pour la page e-commerce */
+ .ecommerce-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/ecommerce-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0;
+    text-align: center;
+    color: white;
+}
+
+.ecommerce-hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+}
+
+.ecommerce-hero p {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ecommerce-badge {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #3498db;
+}
+
+.feature-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.feature-description {
+    color: #555;
+    line-height: 1.6;
+}
+
+.pricing-section {
+    background: #f8f9fa;
+    padding: 4rem 0;
+    margin: 3rem 0;
+}
+
+.pricing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: scale(1.03);
+}
+
+.pricing-card.featured {
+    border: 2px solid #3498db;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.08);
+}
+
+.pricing-card.featured::after {
+    content: "Recommandé";
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #3498db;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.pricing-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.pricing-subtitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-price {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-features {
+    margin-bottom: 2rem;
+}
+
+.pricing-features li {
+    margin-bottom: 0.8rem;
+    padding-left: 25px;
+    position: relative;
+}
+
+.pricing-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+}
+
+.pricing-cta {
+    text-align: center;
+}
+
+.case-studies {
+   
+    margin: 2rem 14rem;
+}
+
+.case-study {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-bottom: 2rem;
+}
+
+.case-study-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.case-study-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.case-study-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.case-study-meta {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.case-study-content {
+    margin-bottom: 1.5rem;
+}
+
+.case-study-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+.case-study-stat {
+    flex: 1;
+    min-width: 150px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.faq-section {
+    margin: 2rem 14rem;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+}
+
+.faq-question {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.faq-answer {
+    color: #555;
+    line-height: 1.6;
+}
+
+.process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    counter-reset: process-counter;
+    margin: 3rem 0;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+    padding: 0 20px 30px 70px;
+    counter-increment: process-counter;
+}
+
+.process-step::before {
+    content: counter(process-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.process-step::after {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 50px;
+    bottom: 0;
+    width: 2px;
+    background: #e0e0e0;
+}
+
+.process-step:last-child::after {
+    display: none;
+}
+
+.process-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.process-description {
+    color: #555;
+    line-height: 1.6;
+}
+
+.cta-ecommerce {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    padding: 4rem 0;
+    color: white;
+    text-align: center;
+}
+
+.cta-ecommerce h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-ecommerce p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.btn-cta-white {
+    background: white;
+    color: #3498db;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.btn-cta-white:hover {
+    background: rgba(255,255,255,0.9);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
