@@ -1,0 +1,41 @@
+backend:
+  name: git-gateway
+  branch: dev # Branche sur laquelle publier
+
+# Dossier media_folder où seront stockés les fichiers uploadés
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+# Activation de la prévisualisation
+site_url: https://netvision.netlify.app
+display_url: https://netvision.netlify.app
+logo_url: https://netvision.netlify.app/logo.png
+
+# Collections de contenu
+collections:
+  - name: "blog"
+    label: "Articles Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date de Publication", name: "date", widget: "datetime"}
+      - {label: "Image à la Une", name: "featured_image", widget: "image", required: false}
+      - {label: "Extrait", name: "excerpt", widget: "text"}
+      - {label: "Catégories", name: "categories", widget: "list"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Prix", name: "price", widget: "number", required: false}
+      - {label: "Fonctionnalités", name: "features", widget: "list"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
