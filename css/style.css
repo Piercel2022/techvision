@@ -217,6 +217,75 @@ nav {
     background: #2980b9;
 }
 
+/* Styles recommandés pour le carrousel */
+.services-carousel {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.services-carousel h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #333;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 30px;
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.carousel-item {
+    flex: 0 0 90%;
+    max-width: 90%;
+    scroll-snap-align: center;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover {
+    transform: translateY(-10px);
+}
+
+.carousel-item h3 {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #444;
+}
+
+.carousel-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .carousel-item {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel-item {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+}
+
 /* Testimonials */
 .testimonials {
     padding: 80px 0;
