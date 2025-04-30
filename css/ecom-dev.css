@@ -1,6 +1,33 @@
- /* Styles spécifiques pour la page e-commerce */
- .ecommerce-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/ecommerce-hero.jpg');
+/* Styles spécifiques pour la page e-commerce avec nouvelle identité visuelle
+   Couleurs principales:
+   - Bleu profond (#1A4D8C): Fiabilité, confiance, professionnalisme
+   - Turquoise vif (#00BCD4): Innovation, technologie, fraîcheur
+   - Orange vif (#FF5722): Appels à l'action, éléments à mettre en valeur
+   - Vert menthe (#4CAF50): Éléments liés au succès et à la croissance
+   - Gris anthracite (#333333): Texte et éléments graphiques
+   - Blanc (#FFFFFF): Fonds et espaces négatifs
+   - Gris clair (#F5F5F5): Arrière-plans secondaires
+*/
+
+/* Importation des polices Montserrat et Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400&display=swap');
+
+/* Reset des styles de base */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #1A4D8C;
+}
+
+/* Section hero */
+.ecommerce-hero {
+    background: linear-gradient(rgba(26, 77, 140, 0.85), rgba(0, 188, 212, 0.75)), url('images/ecommerce-hero.jpg');
     background-size: cover;
     background-position: center;
     padding: 8rem 0;
@@ -9,11 +36,15 @@
 }
 
 .ecommerce-hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 3.2rem;
     margin-bottom: 1rem;
 }
 
 .ecommerce-hero p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
     font-size: 1.4rem;
     max-width: 800px;
     margin: 0 auto;
@@ -21,17 +52,19 @@
 
 .ecommerce-badge {
     display: inline-block;
-    background: #e74c3c;
+    background: #FF5722;
     color: white;
     padding: 8px 15px;
     border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     font-size: 0.9rem;
-    font-weight: bold;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+/* Grille de fonctionnalités */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -42,35 +75,40 @@
 .feature-card {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(26, 77, 140, 0.1);
     padding: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid #00BCD4;
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px rgba(26, 77, 140, 0.15);
 }
 
 .feature-icon {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #3498db;
+    color: #00BCD4;
 }
 
 .feature-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: #1A4D8C;
 }
 
 .feature-description {
-    color: #555;
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
     line-height: 1.6;
 }
 
+/* Section prix */
 .pricing-section {
-    background: #f8f9fa;
+    background: #F5F5F5;
     padding: 4rem 0;
     margin: 3rem 0;
 }
@@ -86,7 +124,7 @@
 .pricing-card {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(26, 77, 140, 0.1);
     padding: 30px;
     flex: 1;
     min-width: 300px;
@@ -100,7 +138,7 @@
 }
 
 .pricing-card.featured {
-    border: 2px solid #3498db;
+    border: 2px solid #00BCD4;
     transform: scale(1.05);
 }
 
@@ -113,29 +151,36 @@
     position: absolute;
     top: -12px;
     right: 20px;
-    background: #3498db;
+    background: #00BCD4;
     color: white;
     padding: 5px 15px;
     border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     font-size: 0.8rem;
 }
 
 .pricing-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: #1A4D8C;
 }
 
 .pricing-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
     font-size: 1rem;
-    color: #7f8c8d;
+    color: #333333;
     margin-bottom: 1.5rem;
 }
 
 .pricing-price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 2.2rem;
-    font-weight: bold;
-    color: #3498db;
+    color: #00BCD4;
     margin-bottom: 1.5rem;
 }
 
@@ -144,6 +189,7 @@
 }
 
 .pricing-features li {
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 0.8rem;
     padding-left: 25px;
     position: relative;
@@ -153,24 +199,25 @@
     content: "✓";
     position: absolute;
     left: 0;
-    color: #2ecc71;
+    color: #4CAF50;
 }
 
 .pricing-cta {
     text-align: center;
 }
 
+/* Études de cas */
 .case-studies {
-   
     margin: 2rem 14rem;
 }
 
 .case-study {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(26, 77, 140, 0.1);
     padding: 30px;
     margin-bottom: 2rem;
+    border-left: 4px solid #1A4D8C;
 }
 
 .case-study-header {
@@ -185,20 +232,28 @@
     border-radius: 50%;
     object-fit: cover;
     margin-right: 20px;
+    border: 3px solid #00BCD4;
 }
 
 .case-study-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     font-size: 1.6rem;
     margin-bottom: 0.3rem;
+    color: #1A4D8C;
 }
 
 .case-study-meta {
-    color: #7f8c8d;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #333333;
     font-size: 0.9rem;
 }
 
 .case-study-content {
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 1.5rem;
+    color: #333333;
 }
 
 .case-study-stats {
@@ -211,44 +266,54 @@
 .case-study-stat {
     flex: 1;
     min-width: 150px;
-    background: #f8f9fa;
+    background: #F5F5F5;
     padding: 15px;
     border-radius: 8px;
     text-align: center;
+    border-bottom: 3px solid #00BCD4;
 }
 
 .stat-value {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 1.8rem;
-    font-weight: bold;
-    color: #e74c3c;
+    color: #FF5722;
     margin-bottom: 0.3rem;
 }
 
 .stat-label {
-    color: #7f8c8d;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #333333;
     font-size: 0.9rem;
 }
 
+/* FAQ */
 .faq-section {
     margin: 2rem 14rem;
 }
 
 .faq-item {
     margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #F5F5F5;
 }
 
 .faq-question {
-    font-size: 1.3rem;
-    color: #2c3e50;
-    margin-bottom: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    font-size: 1.3rem;
+    color: #1A4D8C;
+    margin-bottom: 0.8rem;
 }
 
 .faq-answer {
-    color: #555;
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
     line-height: 1.6;
 }
 
+/* Étapes du processus */
 .process-steps {
     display: flex;
     flex-wrap: wrap;
@@ -272,14 +337,15 @@
     top: 0;
     width: 50px;
     height: 50px;
-    background: #3498db;
+    background: #1A4D8C;
     color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .process-step::after {
@@ -289,7 +355,7 @@
     top: 50px;
     bottom: 0;
     width: 2px;
-    background: #e0e0e0;
+    background: #00BCD4;
 }
 
 .process-step:last-child::after {
@@ -297,40 +363,49 @@
 }
 
 .process-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: #1A4D8C;
 }
 
 .process-description {
-    color: #555;
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
     line-height: 1.6;
 }
 
+/* Appel à l'action */
 .cta-ecommerce {
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background: linear-gradient(135deg, #1A4D8C, #00BCD4);
     padding: 4rem 0;
     color: white;
     text-align: center;
 }
 
 .cta-ecommerce h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
 }
 
 .cta-ecommerce p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto 2rem;
 }
 
 .btn-cta-white {
-    background: white;
-    color: #3498db;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background: #FF5722;
+    color: white;
     padding: 15px 40px;
     border-radius: 50px;
-    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-block;
@@ -338,7 +413,57 @@
 }
 
 .btn-cta-white:hover {
-    background: rgba(255,255,255,0.9);
+    background: #e64a19;
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Boutons généraux */
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #1A4D8C;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #164576;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #00BCD4;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #00a5bb;
+    transform: translateY(-2px);
+}
+
+.btn-cta {
+    background-color: #FF5722;
+    color: white;
+    border-radius: 50px;
+    padding: 12px 30px;
+}
+
+.btn-cta:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+.btn-success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #43a047;
 }
