@@ -1,16 +1,64 @@
-/* about.css */
+/* about.css - Modernisé avec la nouvelle identité visuelle */
+
+/* Variables globales de l'identité visuelle */
+:root {
+    /* Couleurs principales */
+    --primary-color: #1A4D8C;    /* Bleu profond */
+    --secondary-color: #00BCD4;  /* Turquoise vif */
+    
+    /* Couleurs secondaires */
+    --text-color: #333333;       /* Gris anthracite */
+    --light-bg: #F5F5F5;         /* Gris clair */
+    --white: #FFFFFF;            /* Blanc */
+    
+    /* Couleurs d'accent */
+    --accent-color: #FF5722;     /* Orange vif */
+    --success-color: #4CAF50;    /* Vert menthe */
+    
+    /* Autres variables */
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Typographie */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+}
 
 .about-hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     padding: 120px 0 60px;
-    color: white;
+    color: var(--white);
     text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.about-hero p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Timeline */
 .timeline {
     max-width: 800px;
-    margin: 60px auto;
+    margin: 80px auto;
     position: relative;
 }
 
@@ -19,19 +67,25 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 2px;
+    width: 3px;
     height: 100%;
     background: var(--secondary-color);
 }
 
 .timeline-item {
     width: calc(50% - 30px);
-    margin: 30px 0;
+    margin: 40px 0;
     position: relative;
-    padding: 20px;
-    background: white;
+    padding: 25px;
+    background: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.timeline-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
 }
 
 .timeline-item:nth-child(odd) {
@@ -44,126 +98,310 @@
 
 .year {
     position: absolute;
-    background: var(--secondary-color);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    top: -15px;
+    background: var(--primary-color);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 25px;
+    top: -18px;
 }
 
 .timeline-item:nth-child(odd) .year {
-    right: -70px;
+    right: -75px;
 }
 
 .timeline-item:nth-child(even) .year {
-    left: -70px;
+    left: -75px;
+}
+
+.timeline-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
 }
 
 /* Section Valeurs */
 .values-section {
-    padding: 60px 0;
+    padding: 80px 0;
     background: var(--light-bg);
 }
 
 .values-section h2 {
     text-align: center;
     color: var(--primary-color);
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
 }
 
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .value-card {
-    background: white;
-    padding: 30px;
+    background: var(--white);
+    padding: 35px 30px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
 .value-card:hover {
     transform: translateY(-10px);
 }
 
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 0;
+    background: var(--accent-color);
+    transition: var(--transition);
+}
+
+.value-card:hover::before {
+    height: 100%;
+}
+
+.value-card .icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
 .value-card h3 {
     color: var(--primary-color);
     margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.value-card p {
+    color: var(--text-color);
+    font-weight: 300;
 }
 
 /* Section Équipe */
 .team-section {
-    padding: 60px 0;
+    padding: 80px 0;
 }
 
 .team-section h2 {
     text-align: center;
     color: var(--primary-color);
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
 }
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .team-member {
-    background: white;
+    background: var(--white);
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow);
     text-align: center;
+    transition: var(--transition);
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.team-member .image-container {
+    position: relative;
+    overflow: hidden;
 }
 
 .team-member img {
     width: 100%;
-    height: 300px;
+    height: 320px;
     object-fit: cover;
+    transition: var(--transition);
+}
+
+.team-member:hover img {
+    transform: scale(1.05);
+}
+
+.team-member .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(26, 77, 140, 0.2), rgba(0, 188, 212, 0.4));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.team-member:hover .image-overlay {
+    opacity: 1;
+}
+
+.team-member .content {
+    padding: 25px 20px;
 }
 
 .team-member h3 {
     color: var(--primary-color);
-    margin: 15px 0 5px;
+    margin: 0 0 8px;
+    font-size: 1.4rem;
 }
 
-.team-member p {
-    color: var(--text-color);
-    font-style: italic;
+.team-member .position {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1rem;
     margin-bottom: 15px;
+}
+
+.team-member .bio {
+    color: var(--text-color);
+    font-weight: 300;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.team-member .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.team-member .social-links a {
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.team-member .social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: #15427A;
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background: #00A5BA;
+}
+
+.btn-accent {
+    background: var(--accent-color);
+}
+
+.btn-accent:hover {
+    background: #E64A19;
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
     .timeline:before {
-        left: 20px;
+        left: 30px;
     }
 
     .timeline-item {
-        width: calc(100% - 50px);
-        margin: 30px 0 30px 50px !important;
+        width: calc(100% - 70px);
+        margin: 40px 0 40px 70px !important;
     }
 
     .timeline-item .year {
-        left: -50px !important;
+        left: -70px !important;
         right: auto !important;
+    }
+    
+    .values-grid,
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
     }
 }
 
 @media (max-width: 768px) {
     .about-hero {
-        padding: 100px 0 40px;
+        padding: 100px 0 50px;
+    }
+    
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero p {
+        font-size: 1.1rem;
+        padding: 0 20px;
     }
 
-    .value-card,
-    .team-member {
+    .values-section h2,
+    .team-section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .value-card {
+        padding: 30px 25px;
+    }
+
+    .team-member img {
+        height: 280px;
+    }
+    
+    .timeline-item h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .about-hero p {
+        font-size: 1rem;
+    }
+    
+    .timeline-item {
         padding: 20px;
+        margin: 40px 0 40px 60px !important;
     }
-
+    
     .team-member img {
         height: 250px;
     }
