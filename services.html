@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/services.css">
-   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -16,11 +16,11 @@
                 <div class="logo">
                     <h1>NetVision Solutions</h1>
                 </div>
-                <button class="hamburger">&#9776;</button> <!-- Hamburger Icon -->
+                <button class="hamburger">&#9776;</button>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Accueil</a></li>
-                    <li><a href="services.html">Services</a>
-                        <!-- Ajouter ce sous-menu -->
+                    <li class="dropdown">
+                        <a href="services.html">Services</a>
                         <ul class="submenu">
                             <li><a href="web-development.html">Développement Web</a></li>
                             <li><a href="software-development.html">Logiciels sur mesure</a></li>
@@ -44,86 +44,104 @@
         </section>
 
         <section class="services-intro">
-            <h2>Accélérez votre croissance grâce à notre expertise</h2>
-            <p>Dans un monde où la technologie évolue constamment, votre entreprise a besoin d'un partenaire capable d'anticiper les changements et de vous guider vers l'excellence numérique. Chez TechnoVision Solutions, nous combinons expertise technique et vision stratégique pour créer des solutions sur mesure qui répondent parfaitement à vos défis spécifiques.</p>
+            <div class="container">
+                <h2>Accélérez votre croissance grâce à notre expertise</h2>
+                <p>Dans un monde où la technologie évolue constamment, votre entreprise a besoin d'un partenaire capable d'anticiper les changements et de vous guider vers l'excellence numérique. Chez NetVision Solutions, nous combinons expertise technique et vision stratégique pour créer des solutions sur mesure qui répondent parfaitement à vos défis spécifiques.</p>
+            </div>
         </section>
 
         <section class="services-grid">
             <div class="container">
                 <div class="service-card animate-slide-in">
                     <div class="service-tag">Le plus demandé</div>
-                    <div class="service-icon">
-                        <img src="images/transformation_numerique.png" alt="Transformation numérique">
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <img src="images/transformation_numerique.png" alt="Transformation numérique">
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-title">Conseil en transformation numérique</h3>
+                            <p class="service-subtitle">Propulsez votre entreprise vers l'ère digitale</p>
+                            <p class="service-description">Notre expertise vous guide à travers chaque étape de votre transformation digitale, en convertissant les défis technologiques en avantages concurrentiels décisifs pour votre croissance.</p>
+                            <ul class="service-features">
+                                <li>Audit complet de votre infrastructure actuelle</li>
+                                <li>Élaboration d'une stratégie digitale sur mesure</li>
+                                <li>Planification détaillée de la transformation</li>
+                                <li>Formation et accompagnement des équipes</li>
+                            </ul>
+                            <div class="testimonial">
+                                "Après notre collaboration avec NetVision Solutions, notre productivité a augmenté de 37% dès les trois premiers mois. Leur approche méthodique nous a permis d'éviter les erreurs coûteuses et d'adopter rapidement les bonnes pratiques digitales."
+                                <div class="testimonial-author">— Sophie M., Directrice Opérationnelle</div>
+                            </div>
+                            <div class="service-footer">
+                                <p class="price-tag">À partir de 2 800€</p>
+                                <div class="guarantee">
+                                    <strong>Notre promesse :</strong> Si vous n'observez pas d'améliorations mesurables après 3 mois, nous prolongeons notre accompagnement gratuitement.
+                                </div>
+                                <a href="contact.html" class="btn btn-service">Planifier un audit gratuit</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="service-title">Conseil en transformation numérique</h3>
-                    <p class="service-subtitle">Propulsez votre entreprise vers l'ère digitale</p>
-                    <p class="service-description">Notre expertise vous guide à travers chaque étape de votre transformation digitale, en convertissant les défis technologiques en avantages concurrentiels décisifs pour votre croissance.</p>
-                    <ul class="service-features">
-                        <li>Audit complet de votre infrastructure actuelle</li>
-                        <li>Élaboration d'une stratégie digitale sur mesure</li>
-                        <li>Planification détaillée de la transformation</li>
-                        <li>Formation et accompagnement des équipes</li>
-                    </ul>
-                    <div class="testimonial">
-                        "Après notre collaboration avec NetVision Solutions, notre productivité a augmenté de 37% dès les trois premiers mois. Leur approche méthodique nous a permis d'éviter les erreurs coûteuses et d'adopter rapidement les bonnes pratiques digitales."
-                        <div class="testimonial-author">— Sophie M., Directrice Opérationnelle</div>
-                    </div>
-                    <p class="price-tag">À partir de 2 800€</p>
-                    <div class="guarantee">
-                        <strong>Notre promesse :</strong> Si vous n'observez pas d'améliorations mesurables après 3 mois, nous prolongeons notre accompagnement gratuitement.
-                    </div>
-                    <a href="contact.html" class="btn btn-service">Planifier un audit gratuit</a>
                 </div>
 
                 <div class="service-card animate-slide-in">
-                    <div class="service-icon">
-                        <img src="images/development_sur-mesure.png" alt="Développement">
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <img src="images/development_sur-mesure.png" alt="Développement">
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-title">Développement sur mesure</h3>
+                            <p class="service-subtitle">Des solutions uniques pour des besoins uniques</p>
+                            <p class="service-description">Nous créons des applications personnalisées qui s'alignent parfaitement avec vos processus métier, éliminant les frustrations des solutions génériques et maximisant votre efficacité opérationnelle.</p>
+                            <ul class="service-features">
+                                <li>Applications web performantes et évolutives</li>
+                                <li>Solutions mobiles cross-platform</li>
+                                <li>Logiciels métier parfaitement adaptés à vos besoins</li>
+                                <li>Intégration transparente avec vos systèmes existants</li>
+                            </ul>
+                            <div class="testimonial">
+                                "L'application sur mesure développée par NetVision Solutions nous a permis d'automatiser des processus qui prenaient auparavant 12 heures par semaine. Le ROI a dépassé nos attentes dès le deuxième mois d'utilisation."
+                                <div class="testimonial-author">— Thomas L., CEO de LogiTrans</div>
+                            </div>
+                            <div class="service-footer">
+                                <p class="price-tag">À partir de 3 500€</p>
+                                <div class="guarantee">
+                                    <strong>Notre promesse :</strong> Nous continuerons à affiner votre solution jusqu'à ce qu'elle réponde parfaitement à vos attentes, sans frais supplémentaires.
+                                </div>
+                                <a href="contact.html" class="btn btn-service">Discuter de votre projet</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="service-title">Développement sur mesure</h3>
-                    <p class="service-subtitle">Des solutions uniques pour des besoins uniques</p>
-                    <p class="service-description">Nous créons des applications personnalisées qui s'alignent parfaitement avec vos processus métier, éliminant les frustrations des solutions génériques et maximisant votre efficacité opérationnelle.</p>
-                    <ul class="service-features">
-                        <li>Applications web performantes et évolutives</li>
-                        <li>Solutions mobiles cross-platform</li>
-                        <li>Logiciels métier parfaitement adaptés à vos besoins</li>
-                        <li>Intégration transparente avec vos systèmes existants</li>
-                    </ul>
-                    <div class="testimonial">
-                        "L'application sur mesure développée par NetVision Solutions nous a permis d'automatiser des processus qui prenaient auparavant 12 heures par semaine. Le ROI a dépassé nos attentes dès le deuxième mois d'utilisation."
-                        <div class="testimonial-author">— Thomas L., CEO de LogiTrans</div>
-                    </div>
-                    <p class="price-tag">À partir de 3 500€</p>
-                    <div class="guarantee">
-                        <strong>Notre promesse :</strong> Nous continuerons à affiner votre solution jusqu'à ce qu'elle réponde parfaitement à vos attentes, sans frais supplémentaires.
-                    </div>
-                    <a href="contact.html" class="btn btn-service">Discuter de votre projet</a>
                 </div>
 
                 <div class="service-card animate-slide-in">
-                    <div class="service-icon">
-                        <img src="images/support.png" alt="Support">
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <img src="images/support.png" alt="Support">
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-title">Support technique 24/7</h3>
+                            <p class="service-subtitle">Une tranquillité d'esprit absolue</p>
+                            <p class="service-description">Notre équipe d'experts veille sur votre infrastructure jour et nuit, anticipant les problèmes et intervenant rapidement pour garantir une continuité opérationnelle optimale pour votre entreprise.</p>
+                            <ul class="service-features">
+                                <li>Temps de réponse garanti en moins de 15 minutes</li>
+                                <li>Équipe dédiée connaissant parfaitement votre environnement</li>
+                                <li>Maintenance proactive prévenant 93% des incidents</li>
+                                <li>Tableau de bord personnalisé pour suivre vos performances</li>
+                            </ul>
+                            <div class="testimonial">
+                                "Depuis que nous avons souscrit au support 24/7, nos temps d'arrêt ont diminué de 97%. Leur intervention proactive a même identifié et résolu des problèmes dont nous n'étions pas conscients."
+                                <div class="testimonial-author">— Claire D., Directrice IT</div>
+                            </div>
+                            <div class="service-footer">
+                                <p class="price-tag">À partir de 990€/mois</p>
+                                <div class="guarantee">
+                                    <strong>Notre promesse :</strong> Si nous ne respectons pas notre SLA, le mois suivant vous est offert.
+                                </div>
+                                <a href="contact.html" class="btn btn-service">Sécuriser mon infrastructure</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="service-title">Support technique 24/7</h3>
-                    <p class="service-subtitle">Une tranquillité d'esprit absolue</p>
-                    <p class="service-description">Notre équipe d'experts veille sur votre infrastructure jour et nuit, anticipant les problèmes et intervenant rapidement pour garantir une continuité opérationnelle optimale pour votre entreprise.</p>
-                    <ul class="service-features">
-                        <li>Temps de réponse garanti en moins de 15 minutes</li>
-                        <li>Équipe dédiée connaissant parfaitement votre environnement</li>
-                        <li>Maintenance proactive prévenant 93% des incidents</li>
-                        <li>Tableau de bord personnalisé pour suivre vos performances</li>
-                    </ul>
-                    <div class="testimonial">
-                        "Depuis que nous avons souscrit au support 24/7, nos temps d'arrêt ont diminué de 97%. Leur intervention proactive a même identifié et résolu des problèmes dont nous n'étions pas conscients."
-                        <div class="testimonial-author">— Claire D., Directrice IT</div>
-                    </div>
-                    <p class="price-tag">À partir de 990€/mois</p>
-                    <div class="guarantee">
-                        <strong>Notre promesse :</strong> Si nous ne respectons pas notre SLA, le mois suivant vous est offert.
-                    </div>
-                    <a href="contact.html" class="btn btn-service">Sécuriser mon infrastructure</a>
                 </div>
-
-                
             </div>
         </section>
 
@@ -131,7 +149,6 @@
             <div class="container">
                 <h2 class="section-title">Nos Réalisations Qui Transforment des Entreprises</h2>
                 <div class="carousel-container">
-                    <!-- Carousel directly in HTML instead of being loaded by JavaScript -->
                     <div class="carousel-wrapper">
                         <div class="carousel-slide">
                             <div class="realisation-card">
@@ -173,7 +190,6 @@
                     <button class="carousel-prev">&#10094;</button>
                     <button class="carousel-next">&#10095;</button>
                     
-                    <!-- Navigation dots -->
                     <div class="carousel-dots">
                         <span class="carousel-dot active"></span>
                         <span class="carousel-dot"></span>
@@ -184,11 +200,11 @@
             </div>
         </section>
 
-        <section class="cta-section" style="background: #f8f9fa; padding: 4rem 0; text-align: center; margin-top: 3rem;">
+        <section class="cta-section">
             <div class="container">
                 <h2>Prêt à transformer votre entreprise?</h2>
-                <p style="max-width: 700px; margin: 1rem auto 2rem;">Nos experts sont disponibles pour une consultation gratuite de 30 minutes où nous analyserons vos besoins et vous proposerons des solutions concrètes.</p>
-                <a href="contact.html" class="btn btn-service" style="font-size: 1.1rem; padding: 15px 30px;">Réserver ma consultation gratuite</a>
+                <p>Nos experts sont disponibles pour une consultation gratuite de 30 minutes où nous analyserons vos besoins et vous proposerons des solutions concrètes.</p>
+                <a href="contact.html" class="btn btn-service">Réserver ma consultation gratuite</a>
             </div>
         </section>
     </main>
