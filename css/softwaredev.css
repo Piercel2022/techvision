@@ -223,7 +223,7 @@ nav {
 
 .ecommerce-badge {
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #FF5722;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
