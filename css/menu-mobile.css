@@ -1,0 +1,90 @@
+/* Menu hamburger spécifique pour mobile */
+@media (max-width: 768px) {
+    /* Styles pour le bouton hamburger */
+    .hamburger {
+      display: block;
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--primary-color);
+      margin-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    /* Animation du hamburger quand actif */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    /* Styles pour la navigation mobile */
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      gap: 0;
+      padding: 80px 20px 20px;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    
+    /* Classe pour ouvrir le menu */
+    .nav-links.open {
+      right: 0;
+    }
+    
+    .nav-links li {
+      width: 100%;
+      margin: 0;
+      border-bottom: 1px solid var(--light-bg);
+    }
+    
+    .nav-links a {
+      padding: 15px 0;
+      display: block;
+      width: 100%;
+    }
+    
+    /* Overlay quand le menu est ouvert */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    body.menu-open::after {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Empêcher le scroll quand le menu est ouvert */
+    body.menu-open {
+      overflow: hidden;
+    }
+  }
