@@ -89,6 +89,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 115px;
   gap: 25px;
   max-width: 100%;
   padding: 0 20px;
